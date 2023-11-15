@@ -328,6 +328,7 @@
     width: calc(100% - 16px);
     animation: fadeIn linear 0.2s;
     display: none;
+    z-index: 1;
 }
 
 .header__search-input:focus ~ .header__search-history {
@@ -484,6 +485,7 @@
     animation: headerNotifyGrowth ease-in 0.2s;
     transform-origin: calc(100% - 20px) top;
     display: none;
+    z-index: 1;
 }
 
 .header__cart:hover .header__cart-content {

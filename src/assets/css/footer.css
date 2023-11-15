@@ -1,0 +1,102 @@
+.footer {
+    padding-top: 30px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.footer__heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+
+}
+
+.footer__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-item__icon {
+    font-size: 1.6rem;
+    margin-right: 8px;
+}
+
+.footer-item__link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-payment-method__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-payment-method__link {
+    display: block;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    width: 60px;
+    height: 30px;
+    margin: 0 8px 8px 0;
+    border-radius: 2px;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-delivery__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-delivery-item__link {
+    display: block;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    width: 60px;
+    height: 30px;
+    margin: 0 8px 8px 0;
+    border-radius: 2px;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 110px;
+    height: 96px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    background-color: var(--white-color);
+    padding: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.footer__download-app-icon {
+    width: 90px;
+    height: 26px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    background-color: var(--white-color);
+    padding: 4px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}

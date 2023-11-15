@@ -216,10 +216,10 @@
     </header>
 </template>
 <script setup lang="ts">
-    import qrCode from '@/assets/img/qr-download.png'
-    import playStore from '@/assets/img/play-store.png'
-    import appStore from '@/assets/img/app-store.png'
+    import qrCode from '@/assets/img/qr-download.png';
+    import playStore from '@/assets/img/play-store.png';
+    import appStore from '@/assets/img/app-store.png';
 </script>
 <style scoped>
-@import url(@/assets/css/header.css);
+    @import url(@/assets/css/header.css);
 </style>
