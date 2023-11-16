@@ -118,7 +118,7 @@
     box-shadow: 0 0 8px -1px var(--black-color);
     animation: headerNotifyGrowth ease-in 0.2s;
     transform-origin: calc(100% - 20px) top;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     display: none;
     z-index: 1;
 }
@@ -178,7 +178,7 @@
     transform-origin: calc(100% - 20px) top;
     will-change: opacity, transform;
     color: var(--text-color);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     display: none;
     z-index: 1;
 }
@@ -298,7 +298,7 @@
     display: flex;
     align-items: center;
     background-color: var(--white-color);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     position: relative;
 }
 
@@ -316,7 +316,7 @@
     padding: 0 16px;
     font-size: 1.4rem;
     color: var(--text-color);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
 }
 
 .header__search-history {
@@ -324,7 +324,7 @@
     box-shadow: 0 1px 5px #9999;
     position: absolute;
     top: calc(100% + 4px);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     width: calc(100% - 16px);
     animation: fadeIn linear 0.2s;
     display: none;
@@ -392,7 +392,7 @@
     padding-left: 0;
     background-color: var(--white-color);
     box-shadow: 0 1px 5px #9999;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     top: calc(100% + 2px);
     animation: fadeIn linear 0.2s;
     width: 100%;
@@ -440,7 +440,7 @@
     background-color: var(--primary-color);
     border: none;
     outline: none;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     margin-right: 2px;
     cursor: pointer;
 }
@@ -509,6 +509,21 @@
     position: absolute;
     top: -15px;
     right: 0;
+}
+
+.header__cart--no-cart {
+    padding: 28px 0;
+}
+
+.header__cart--no-cart-img {
+    width: 50%;
+}
+
+.header__cart--no-cart-msg {
+    margin-top: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
 }
 
 .header__cart-title {
@@ -604,7 +619,7 @@
     background-color: var(--primary-color);
     width: 124px;
     height: 34px;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     line-height: 34px;
     text-align: center;
     margin: 8px 14px 14px 0;

@@ -19,7 +19,7 @@
     height: 30px;
     text-align: center;
     line-height: 30px;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     color: #939393;
 }
 

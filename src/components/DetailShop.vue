@@ -64,14 +64,7 @@
                 </div>
                 <div class="home-body">
                     <div class="grid__row">
-                        <product/>
-                        <product/>
-                        <product/>
-                        <product/>
-                        <product/>
-                        <product/>
-                        <product/>
-                        <product/>
+                        <product v-for="(product, index) in products" :key="index" :product="product"/>
                     </div>
                 </div>
                 <pagination></pagination>
@@ -82,6 +75,55 @@
 <script setup lang="ts">
     import Product from '@/components/Product.vue';
     import Pagination from '@/components/layout/Pagination.vue';
+    import { ref } from 'vue';
+
+    const products = ref([
+        {
+            id: 1,
+            name: 'Gói kem chống nắng dưỡng trắng nâng tone da trắng hồng Whoo Radiant White Tone Up Sunscreen',
+            image: "https://down-vn.img.susercontent.com/file/fd713159c141347db3cafa19ffc71ecf_tn",
+            priceOld: 1200000,
+            priceCurrent: 1000000,
+            currency: 'vnd',
+            like: true,
+            rating: 4,
+            sold: 56,
+            brand: 'Whoo',
+            originName: 'Japan',
+            percentSalefOff: 10,
+            favorite: true,
+        },
+        {
+            id: 2,
+            name: 'Gói kem chống nắng dưỡng trắng nâng tone da trắng hồng Whoo Radiant White Tone Up Sunscreen',
+            image: "https://down-vn.img.susercontent.com/file/fd713159c141347db3cafa19ffc71ecf_tn",
+            priceOld: 1200000,
+            priceCurrent: 1000000,
+            currency: 'vnd',
+            like: true,
+            rating: 3,
+            sold: 56,
+            brand: 'Whoo',
+            originName: 'American',
+            percentSalefOff: 10,
+            favorite: false,
+        },
+        {
+            id: 3,
+            name: 'Gói kem chống nắng dưỡng trắng nâng tone da trắng hồng Whoo Radiant White Tone Up Sunscreen',
+            image: "https://down-vn.img.susercontent.com/file/fd713159c141347db3cafa19ffc71ecf_tn",
+            priceOld: 1200000,
+            priceCurrent: 1000000,
+            currency: 'vnd',
+            like: false,
+            rating: 4,
+            sold: 56,
+            brand: 'Whoo',
+            originName: 'Japan',
+            percentSalefOff: 0,
+            favorite: true,
+        }
+    ]);
 </script>
 <style scoped>
     @import url(@/assets/css/shop/detail-shop.css);

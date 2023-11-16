@@ -112,14 +112,8 @@
                         <div class="header__search-history">
                             <span class="header__history-title">Lịch sử Tìm kiếm</span>
                             <ul class="header_history-list">
-                                <li class="header_history-item">
-                                    <a href="" class="header__history-link">Kem dưỡng da</a>
-                                </li>
-                                <li class="header_history-item">
-                                    <a href="" class="header__history-link">Kem trị mụn</a>
-                                </li>
-                                <li class="header_history-item">
-                                    <a href="" class="header__history-link">Kem trộn</a>
+                                <li v-for="(item, index) in historySearch" :key="index" class="header_history-item">
+                                    <a href="" class="header__history-link">{{ item }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -151,64 +145,36 @@
                 <div class="header__cart">
                     <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                     <span class="header__cart-quantity">3</span>
-                    <div class="header__cart-content">
-                        <span class="header__cart-title">Sản phẩm đã thêm</span>
-                        <ul class="header__cart-list">
-                            <li class="header__cart-item">
-                                <img src="https://cdn.abphotos.link/photos/resized/320x/2023/07/14/1689327393_RCHDBG6JYjPOMz5W_1689337124-phpqefqxp.png" alt="" class="header__cart-img">
-                                <div class="header__cart-item-info">
-                                    <div class="header__cart-item-head">
-                                        <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
-                                        <div class="header__cart-item-price-wrap">
-                                            <span class="header__cart-item-price">2.000.000 VND</span>
-                                            <span class="header__cart-item-multiply">x</span>
-                                            <span class="header__cart-item-quantity">2</span>
+                    <div class="header__cart-content header__cart--no-cart">
+                        <template v-if="empty(cartProducts)">
+                            <img :src="noCart" alt="" class="header__cart--no-cart-img">
+                            <span class="header__cart--no-cart-msg">Chưa Có Sản Phẩm</span>
+                        </template>
+                        <template v-else>
+                            <span class="header__cart-title">Sản phẩm đã thêm</span>
+                            <ul class="header__cart-list">
+                                <li v-for="cartProduct in cartProducts" :key="cartProduct.id" class="header__cart-item">
+                                    <img :src="cartProduct.thumbnail" alt="" class="header__cart-img">
+                                    <div class="header__cart-item-info">
+                                        <div class="header__cart-item-head">
+                                            <h5 class="header__cart-item-name">{{ cartProduct.name }}</h5>
+                                            <div class="header__cart-item-price-wrap">
+                                                <span class="header__cart-item-price">{{ formatAmount(cartProduct.price) }}</span>
+                                                <span class="header__cart-item-multiply">x</span>
+                                                <span class="header__cart-item-quantity">{{ cartProduct.quantity }}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="header__cart-item-body">
-                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                        <div class="header__cart-item-body">
+                                            <span class="header__cart-item-description">Phân loại: {{ cartProduct.category }}</span>
                                             <span class="header__cart-item-remove">Xóa</span>
                                         </div>
-                                </div>
-                            </li>
-                            <li class="header__cart-item">
-                                <img src="https://cdn.abphotos.link/photos/resized/320x/2023/07/14/1689327393_RCHDBG6JYjPOMz5W_1689337124-phpqefqxp.png" alt="" class="header__cart-img">
-                                <div class="header__cart-item-info">
-                                    <div class="header__cart-item-head">
-                                        <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
-                                        <div class="header__cart-item-price-wrap">
-                                            <span class="header__cart-item-price">2.000.000 VND</span>
-                                            <span class="header__cart-item-multiply">x</span>
-                                            <span class="header__cart-item-quantity">2</span>
-                                        </div>
                                     </div>
-                                    <div class="header__cart-item-body">
-                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
-                                            <span class="header__cart-item-remove">Xóa</span>
-                                        </div>
-                                </div>
-                            </li>
-                            <li class="header__cart-item">
-                                <img src="https://cdn.abphotos.link/photos/resized/320x/2023/07/14/1689327393_RCHDBG6JYjPOMz5W_1689337124-phpqefqxp.png" alt="" class="header__cart-img">
-                                <div class="header__cart-item-info">
-                                    <div class="header__cart-item-head">
-                                        <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
-                                        <div class="header__cart-item-price-wrap">
-                                            <span class="header__cart-item-price">2.000.000 VND</span>
-                                            <span class="header__cart-item-multiply">x</span>
-                                            <span class="header__cart-item-quantity">2</span>
-                                        </div>
-                                    </div>
-                                    <div class="header__cart-item-body">
-                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
-                                            <span class="header__cart-item-remove">Xóa</span>
-                                        </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="header__cart-show-btn">
-                            Xem giỏ hàng
-                        </div>
+                                </li>
+                            </ul>
+                            <div class="header__cart-show-btn">
+                                Xem giỏ hàng
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -219,6 +185,12 @@
     import qrCode from '@/assets/img/qr-download.png';
     import playStore from '@/assets/img/play-store.png';
     import appStore from '@/assets/img/app-store.png';
+    import noCart from '@/assets/img/no-cart.png';
+    import { ref } from 'vue';
+    import { empty, formatAmount } from '@/utils/CommonUtils';
+
+    const cartProducts: Object[] = ref(JSON.parse(sessionStorage.getItem('cart_products') ?? ''));
+    const historySearch: string[] = ref(JSON.parse(sessionStorage.getItem('history_search') ?? ''));
 </script>
 <style scoped>
     @import url(@/assets/css/header.css);
