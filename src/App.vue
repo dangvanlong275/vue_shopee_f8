@@ -1,14 +1,16 @@
 <template>
-  <Header></Header>
+  <!-- <Header></Header> -->
   <div class="body">
-    <detail-shop></detail-shop>
+    <!-- <detail-shop></detail-shop> -->
+    <authentication></authentication>
   </div>
   <Footer></Footer>
 </template>
-<script setup>
+<script setup lang="ts">
   import Header from '@/components/layout/Header.vue';
   import Footer from '@/components/layout/Footer.vue';
   import DetailShop from '@/components/DetailShop.vue';
+  import Authentication from '@/components/auth/Authentication.vue';
 
   const data = [
     {
