@@ -1,4 +1,5 @@
 <template>
+    <base-header></base-header>
     <div class="grid">
         <div class="grid__row detail_shop">
             <div class="grid__column-2">
@@ -71,10 +72,13 @@
             </div>
         </div>
     </div>
+    <base-footer></base-footer>
 </template>
 <script setup lang="ts">
-    import Product from '@/components/Product.vue';
-    import Pagination from '@/components/layout/Pagination.vue';
+    import BaseHeader from '@/views/layout/Header.vue';
+    import BaseFooter from '@/views/layout/Footer.vue';
+    import Product from '@/views/product/Product.vue';
+    import Pagination from '@/views/layout/Pagination.vue';
     import { ref } from 'vue';
 
     const products = ref([

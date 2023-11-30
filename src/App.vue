@@ -1,16 +1,7 @@
 <template>
-  <!-- <Header></Header> -->
-  <div class="body">
-    <!-- <detail-shop></detail-shop> -->
-    <authentication></authentication>
-  </div>
-  <Footer></Footer>
+  <router-view/>
 </template>
 <script setup lang="ts">
-  import Header from '@/components/layout/Header.vue';
-  import Footer from '@/components/layout/Footer.vue';
-  import DetailShop from '@/components/DetailShop.vue';
-  import Authentication from '@/components/auth/Authentication.vue';
 
   const data = [
     {
@@ -42,3 +33,8 @@
   const historySearch  = ["Kem dưỡng da", "Kem trị mụn", "Kem trộn"];
   sessionStorage.setItem('history_search', JSON.stringify(historySearch));
 </script>
+<style>
+  @import url(@/assets/css/base.css);
+  @import url(@/assets/fonts/fontawesome-free-6.4.2/css/all.min.css);
+  @import url(element-plus/dist/index.css);
+</style>

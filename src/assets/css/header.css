@@ -111,11 +111,3 @@
     align-items: center;
     position: relative;
 }
-
-.header__logo {
-    width: 200px;
-}
-
-.header__logo-img {
-    width: 150px;
-}

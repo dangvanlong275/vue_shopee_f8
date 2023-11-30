@@ -63,14 +63,8 @@
 }
 
 .header__search-input {
-  width: 100%;
-  height: 100%;
   border: none;
   outline: none;
-  padding: 0 16px;
-  font-size: 1.4rem;
-  color: var(--text-color);
-  border-radius: var(--border-radius);
 }
 
 .header__search-history {

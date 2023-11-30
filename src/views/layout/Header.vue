@@ -54,7 +54,7 @@
             <div class="header-with-search">
                 <div class="header__logo">
                     <a href="" class="header__logo-link">
-                        <logo></logo>
+                        <logo fill="#fff"></logo>
                     </a>
                 </div>
                 <header-search></header-search>
@@ -68,10 +68,10 @@
     import playStore from '@/assets/img/play-store.png';
     import appStore from '@/assets/img/app-store.png';
     import Logo from '@/assets/img/Logo.vue';
-    import HeaderNotify from '@/components/layout/HeaderNotify.vue';
-    import HeaderSearch from '@/components/layout/HeaderSearch.vue';
-    import HeaderCart from '@/components/layout/HeaderCart.vue';
-    import NavbarCustomer from '@/components/layout/customer/NavbarCustomer.vue';
+    import HeaderNotify from '@/views/layout/HeaderNotify.vue';
+    import HeaderSearch from '@/views/layout/HeaderSearch.vue';
+    import HeaderCart from '@/views/layout/HeaderCart.vue';
+    import NavbarCustomer from '@/views/layout/customer/NavbarCustomer.vue';
 </script>
 <style scoped>
     @import url(@/assets/css/header.css);
